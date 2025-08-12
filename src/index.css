@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body, #root { height: 100%; }
+.section { @apply py-20; }
+.card { @apply rounded-2xl bg-white shadow-soft ring-1 ring-black/5; }
+.btn { @apply inline-flex items-center justify-center rounded-xl px-5 py-3 font-semibold; }
+.btn-primary { @apply bg-brand-gold text-neutral-900 hover:brightness-95; }
+.btn-ghost { @apply ring-1 ring-black/10 hover:bg-black/5; }
+.kg-badge { @apply inline-flex items-center gap-2 text-sm text-brand-gold; }
