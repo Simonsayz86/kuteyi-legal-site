@@ -1,0 +1,53 @@
+1. Preservation of Features
+
+Never remove existing features unless explicitly instructed to do so.
+
+If a modification is required to fix a bug, make the minimum necessary adjustments to preserve existing functionality.
+
+2. Avoiding Duplicate Components
+
+Check thoroughly for existing components, functions, and files before creating new ones.
+
+If a similar component or function already exists, modify the existing one to cover new use cases or fix bugs without duplication.
+
+If duplicate functions or files are identified, consolidate them into one comprehensive version, covering all edge cases clearly.
+
+3. Component and Function Reusability
+
+Always create modular and reusable components and functions.
+
+Clearly document components and functions to enhance reusability and understanding across the project.
+
+Ensure that common functionalities are abstracted into shared utilities or helper functions.
+
+4. Code Consistency and Style
+
+Maintain a consistent coding style throughout the project, following established patterns.
+
+Use descriptive naming conventions for functions, components, and variables.
+
+Follow established linting rules and coding standards strictly.
+
+5. Edge Case Handling
+
+When modifying or consolidating code, explicitly handle all edge cases to prevent regressions.
+
+Include clear comments indicating why specific edge cases are handled.
+
+6. Code Validation
+
+After making changes, carefully validate the entire codebase to ensure no unintended side effects or feature regressions occur.
+
+Provide explicit test cases or scenarios when validating modifications.
+
+7. Documentation and Comments
+
+Clearly comment any modifications explaining the purpose of the change.
+
+Update documentation simultaneously with code changes to ensure alignment and clarity.
+
+8. Explicit Instruction Compliance
+
+Make changes strictly based on explicit instructions provided.
+
+Seek clarification if instructions are ambiguous or incomplete before proceeding.

@@ -1,6 +1,8 @@
 {
-  "name": "kuteyi-legal-light",
+  "name": "kuteyi-legal-group-website",
   "version": "1.0.0",
+  "description": "Official website for Kuteyi Legal Group, APC - Entertainment, Personal Injury & Real Estate Law",
+  "homepage": "https://www.kuteyilegalgroup.com",
   "private": true,
   "type": "module",
   "scripts": {

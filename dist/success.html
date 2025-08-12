@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#C6B08D" />
+    <title>Thank You - Kuteyi Legal Group, APC</title>
+    <meta name="description" content="Thank you for contacting Kuteyi Legal Group. We will respond to your consultation request within 24 hours." />
+    <link rel="icon" href="/logo.png" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              brand: { gold: '#C6B08D', charcoal: '#1F2937' }
+            },
+            fontFamily: {
+              serif: ['ui-serif', 'Georgia', 'Cambria', 'Times New Roman', 'serif'],
+              sans: ['ui-sans-serif', 'system-ui', 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', 'sans-serif']
+            },
+            boxShadow: {
+              soft: '0 10px 30px rgba(0,0,0,0.08)'
+            }
+          },
+        },
+      }
+    </script>
+    <style>
+      .card { @apply rounded-2xl bg-white shadow-soft ring-1 ring-black/5; }
+      .btn { @apply inline-flex items-center justify-center rounded-xl px-5 py-3 font-semibold; }
+      .btn-primary { @apply bg-brand-gold text-neutral-900 hover:brightness-95; }
+    </style>
+  </head>
+  <body class="antialiased bg-neutral-50 text-neutral-900">
+    <div class="min-h-screen flex items-center justify-center px-4">
+      <div class="card p-8 max-w-md w-full text-center">
+        <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+          <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+          </svg>
+        </div>
+        <h1 class="text-2xl font-serif font-bold text-neutral-900 mb-2">Thank You!</h1>
+        <p class="text-neutral-600 mb-6">
+          Your consultation request has been received. We will respond within 24 hours during business hours.
+        </p>
+        <div class="space-y-2 text-sm text-neutral-700 mb-6">
+          <p><strong>Email:</strong> info@kuteyilegalgroup.com</p>
+          <p><strong>Phone:</strong> (213) 432-7010</p>
+          <p><strong>Business Hours:</strong> Mon–Fri, 9am–6pm PT</p>
+        </div>
+        <a href="/" class="btn btn-primary w-full">Return to Homepage</a>
+      </div>
+    </div>
+  </body>
+</html>

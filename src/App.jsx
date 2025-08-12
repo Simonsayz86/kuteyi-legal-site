@@ -50,7 +50,7 @@ export default function App() {
       <header className="sticky top-0 z-40 bg-white/70 backdrop-blur border-b border-black/5">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
           <a href="#" className="flex items-center gap-3">
-            <img src="/logo.png" className="h-9 w-9 rounded-full ring-1 ring-black/10 object-cover" alt="KLG logo" />
+            <img src="/logo.png" className="h-9 w-9 rounded-full ring-1 ring-black/10 object-cover" alt="Kuteyi Legal Group logo" loading="eager" />
             <div className="font-semibold tracking-wide">Kuteyi Legal Group, APC</div>
           </a>
           <nav className="hidden md:flex items-center gap-8 text-sm">
@@ -97,7 +97,7 @@ export default function App() {
           </div>
           <div className="lg:col-span-5">
             <div className="card p-2">
-              <img src="/headshot.jpg" alt="Akin Kuteyi" className="w-full h-[440px] object-cover rounded-2xl" />
+              <img src="/headshot.jpg" alt="Akin Kuteyi, Attorney at Kuteyi Legal Group" className="w-full h-[440px] object-cover rounded-2xl" loading="lazy" />
             </div>
           </div>
         </div>
@@ -110,19 +110,19 @@ export default function App() {
           <p className="mt-2 text-neutral-600 max-w-2xl">Boutique representation with big‑firm polish.</p>
           <div className="mt-10 grid lg:grid-cols-3 gap-6">
             <div className="card p-6">
-              <div className="text-brand-gold font-semibold">Entertainment</div>
+              <h3 className="text-brand-gold font-semibold">Entertainment Law</h3>
               <ul className="mt-3 list-disc list-inside text-neutral-700 space-y-1 text-sm">
                 {entertainment.map((i, idx)=>(<li key={idx}>{i}</li>))}
               </ul>
             </div>
             <div className="card p-6">
-              <div className="text-brand-gold font-semibold">Personal Injury</div>
+              <h3 className="text-brand-gold font-semibold">Personal Injury Law</h3>
               <ul className="mt-3 list-disc list-inside text-neutral-700 space-y-1 text-sm">
                 {injury.map((i, idx)=>(<li key={idx}>{i}</li>))}
               </ul>
             </div>
             <div className="card p-6">
-              <div className="text-brand-gold font-semibold">Real Estate Law</div>
+              <h3 className="text-brand-gold font-semibold">Real Estate Law</h3>
               <ul className="mt-3 list-disc list-inside text-neutral-700 space-y-1 text-sm">
                 {realEstate.map((i, idx)=>(<li key={idx}>{i}</li>))}
               </ul>
@@ -164,12 +164,12 @@ export default function App() {
           <h2 className="text-3xl font-serif font-bold">Attorney Profiles</h2>
           <div className="mt-8 grid sm:grid-cols-2 gap-8">
             <div className="card p-6">
-              <img src="/headshot.jpg" alt="Akin Kuteyi" className="w-full h-64 object-cover rounded-xl" />
+              <img src="/headshot.jpg" alt="Akin Kuteyi, Attorney at Kuteyi Legal Group" className="w-full h-64 object-cover rounded-xl" loading="lazy" />
               <div className="mt-4 text-xl font-semibold">Akin Kuteyi, Esq.</div>
               <p className="mt-2 text-neutral-700 text-sm">Entertainment, Real Estate, Business, and Personal Injury.</p>
             </div>
             <div className="card p-6">
-              <img src="/office1.jpg" alt="Office" className="w-full h-64 object-cover rounded-xl" />
+              <img src="/office1.jpg" alt="Kuteyi Legal Group office interior" className="w-full h-64 object-cover rounded-xl" loading="lazy" />
               <p className="mt-4 text-neutral-700 text-sm">Our curated office and collaborative culture support decisive outcomes.</p>
             </div>
           </div>
@@ -202,12 +202,52 @@ export default function App() {
           <div className="grid lg:grid-cols-3 gap-10">
             <div className="lg:col-span-2">
               <h2 className="text-3xl font-serif font-bold">Request Consultation</h2>
-              <form className="mt-8 grid sm:grid-cols-2 gap-4">
-                <input className="w-full rounded-xl bg-white ring-1 ring-black/10 px-4 py-3" placeholder="Full Name" />
-                <input className="w-full rounded-xl bg-white ring-1 ring-black/10 px-4 py-3" placeholder="Email" type="email" />
-                <input className="w-full rounded-xl bg-white ring-1 ring-black/10 px-4 py-3 sm:col-span-2" placeholder="Phone" type="tel" />
-                <textarea className="w-full rounded-xl bg-white ring-1 ring-black/10 px-4 py-3 sm:col-span-2" rows="5" placeholder="Briefly describe your case"></textarea>
-                <button type="button" className="sm:col-span-2 btn btn-primary">Submit</button>
+              <form
+                name="contact"
+                method="POST"
+                action="/success.html"
+                data-netlify="true"
+                data-netlify-honeypot="bot-field"
+                className="mt-8 grid sm:grid-cols-2 gap-4"
+              >
+                {/* Hidden field for Netlify bot detection */}
+                <input type="hidden" name="form-name" value="contact" />
+                <div style={{ display: 'none' }}>
+                  <label>Don't fill this out if you're human: <input name="bot-field" /></label>
+                </div>
+
+                <input
+                  className="w-full rounded-xl bg-white ring-1 ring-black/10 px-4 py-3"
+                  placeholder="Full Name"
+                  name="name"
+                  type="text"
+                  required
+                  aria-label="Full Name"
+                />
+                <input
+                  className="w-full rounded-xl bg-white ring-1 ring-black/10 px-4 py-3"
+                  placeholder="Email"
+                  name="email"
+                  type="email"
+                  required
+                  aria-label="Email Address"
+                />
+                <input
+                  className="w-full rounded-xl bg-white ring-1 ring-black/10 px-4 py-3 sm:col-span-2"
+                  placeholder="Phone"
+                  name="phone"
+                  type="tel"
+                  aria-label="Phone Number"
+                />
+                <textarea
+                  className="w-full rounded-xl bg-white ring-1 ring-black/10 px-4 py-3 sm:col-span-2"
+                  rows="5"
+                  placeholder="Briefly describe your case"
+                  name="message"
+                  required
+                  aria-label="Case Description"
+                ></textarea>
+                <button type="submit" className="sm:col-span-2 btn btn-primary">Submit Consultation Request</button>
                 <p className="sm:col-span-2 text-xs text-neutral-500">
                   Submitting this form does not create an attorney‑client relationship. Please do not include confidential details.
                 </p>
@@ -216,8 +256,16 @@ export default function App() {
             <div className="card p-6 h-fit">
               <div className="font-semibold">Contact</div>
               <div className="mt-3 space-y-2 text-neutral-700 text-sm">
-                <div>info@attorneykuteyi.com</div>
-                <div>(213) 432‑7010</div>
+                <div>
+                  <a href="mailto:info@kuteyilegalgroup.com" className="hover:text-brand-gold transition-colors">
+                    info@kuteyilegalgroup.com
+                  </a>
+                </div>
+                <div>
+                  <a href="tel:+12134327010" className="hover:text-brand-gold transition-colors">
+                    (213) 432‑7010
+                  </a>
+                </div>
                 <div>Los Angeles • Santa Clarita</div>
               </div>
               <div className="mt-6 font-semibold">Business Hours</div>
@@ -232,8 +280,8 @@ export default function App() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-sm flex flex-col sm:flex-row gap-4 sm:items-center justify-between text-neutral-600">
           <div>© {new Date().getFullYear()} Kuteyi Legal Group, APC. All rights reserved.</div>
           <div className="flex gap-6">
-            <a href="#" className="hover:text-neutral-900">Privacy</a>
-            <a href="#" className="hover:text-neutral-900">Terms</a>
+            <a href="mailto:info@kuteyilegalgroup.com" className="hover:text-neutral-900">Contact</a>
+            <a href="tel:+12134327010" className="hover:text-neutral-900">Call Us</a>
           </div>
         </div>
       </footer>

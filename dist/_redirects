@@ -1,0 +1,9 @@
+# Redirect HTTP to HTTPS
+http://kuteyilegalgroup.com/* https://kuteyilegalgroup.com/:splat 301!
+http://www.kuteyilegalgroup.com/* https://www.kuteyilegalgroup.com/:splat 301!
+
+# Redirect www to non-www (optional - choose based on preference)
+https://www.kuteyilegalgroup.com/* https://kuteyilegalgroup.com/:splat 301!
+
+# SPA fallback - must be last
+/* /index.html 200
