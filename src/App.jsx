@@ -48,7 +48,7 @@ export default function App() {
     <div className="min-h-screen">
       {/* Navbar */}
       <header className="sticky top-0 z-40 bg-white/70 backdrop-blur border-b border-black/5">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-14 sm:h-16 flex items-center justify-between">
           <a href="#" className="flex items-center gap-3">
             <img src="/logo.png" className="h-9 w-9 rounded-full ring-1 ring-black/10 object-cover" alt="Kuteyi Legal Group logo" loading="eager" />
             <div className="font-semibold tracking-wide">Kuteyi Legal Group, APC</div>
@@ -73,31 +73,33 @@ export default function App() {
 
       {/* Hero - Light theme with headshot */}
       <section className="section">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 grid lg:grid-cols-12 gap-10 items-center">
-          <div className="lg:col-span-7">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 grid lg:grid-cols-12 gap-8 lg:gap-10 items-center">
+          <div className="lg:col-span-7 order-2 lg:order-1">
             <div className="kg-badge"><span className="h-2 w-2 rounded-full bg-brand-gold"></span> Los Angeles • Santa Clarita</div>
-            <h1 className="mt-3 text-4xl sm:text-5xl font-serif font-bold leading-tight text-neutral-900">
+            <h1 className="mt-3 text-3xl sm:text-4xl lg:text-5xl font-serif font-bold leading-tight text-neutral-900">
               Representing Grammy‑Winners, Platinum Producers, Property Owners & Injured Clients.
             </h1>
-            <p className="mt-4 text-neutral-600 max-w-2xl">
+            <p className="mt-4 text-neutral-600 max-w-2xl text-base sm:text-lg">
               Strategy‑first counsel across Entertainment, Personal Injury, and Real Estate—delivered with speed, clarity, and leverage.
             </p>
-            <div className="mt-7 flex flex-wrap gap-3">
-              <a href="#contact" className="btn btn-primary">Book a Call</a>
-              <a href="#services" className="btn btn-ghost">Explore Practice Areas</a>
+            <div className="mt-7 flex flex-col sm:flex-row gap-3">
+              <a href="#contact" className="btn btn-primary text-center">Book a Call</a>
+              <a href="#services" className="btn btn-ghost text-center">Explore Practice Areas</a>
             </div>
-            <div className="mt-8 grid grid-cols-2 sm:grid-cols-4 gap-4 text-sm text-neutral-700">
+            <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 text-sm text-neutral-700">
               {results.map((r, i) => (
-                <div key={i} className="card p-4">
-                  <div className="text-xl font-bold text-neutral-900">{r.top}</div>
-                  <div>{r.sub}</div>
+                <div key={i} className="card p-4 text-center sm:text-left">
+                  <div className="text-lg sm:text-xl font-bold text-neutral-900">{r.top}</div>
+                  <div className="text-xs sm:text-sm">{r.sub}</div>
                 </div>
               ))}
             </div>
           </div>
-          <div className="lg:col-span-5">
+          <div className="lg:col-span-5 order-1 lg:order-2">
             <div className="card p-2">
-              <img src="/headshot.jpg" alt="Akin Kuteyi, Attorney at Kuteyi Legal Group" className="w-full h-[440px] object-cover rounded-2xl" loading="lazy" />
+              <div className="aspect-[3/4] w-full overflow-hidden rounded-2xl image-container">
+                <img src="/headshot.jpg" alt="Akin Kuteyi, Attorney at Kuteyi Legal Group" className="w-full h-full object-cover" loading="lazy" />
+              </div>
             </div>
           </div>
         </div>
@@ -106,9 +108,9 @@ export default function App() {
       {/* Practice Areas */}
       <section id="services" className="section bg-white border-y border-black/5">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-serif font-bold">Practice Areas</h2>
-          <p className="mt-2 text-neutral-600 max-w-2xl">Boutique representation with big‑firm polish.</p>
-          <div className="mt-10 grid lg:grid-cols-3 gap-6">
+          <h2 className="text-2xl sm:text-3xl font-serif font-bold text-center lg:text-left">Practice Areas</h2>
+          <p className="mt-2 text-neutral-600 max-w-2xl text-center lg:text-left">Boutique representation with big‑firm polish.</p>
+          <div className="mt-8 sm:mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             <div className="card p-6">
               <h3 className="text-brand-gold font-semibold">Entertainment Law</h3>
               <ul className="mt-3 list-disc list-inside text-neutral-700 space-y-1 text-sm">
@@ -133,10 +135,10 @@ export default function App() {
 
       {/* About */}
       <section id="about" className="section">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-10 items-start">
-          <div>
-            <h2 className="text-3xl font-serif font-bold">Why Us</h2>
-            <p className="mt-4 text-neutral-700">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-8 lg:gap-10 items-start">
+          <div className="text-center lg:text-left">
+            <h2 className="text-2xl sm:text-3xl font-serif font-bold">Why Us</h2>
+            <p className="mt-4 text-neutral-700 text-base sm:text-lg">
               We empower creative talent and everyday clients alike. Our practice combines sharp transactions with courtroom grit.
             </p>
             <div className="mt-6 space-y-3 text-neutral-700">
@@ -161,15 +163,19 @@ export default function App() {
       {/* Attorneys */}
       <section id="attorneys" className="section bg-white border-y border-black/5">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-serif font-bold">Attorney Profiles</h2>
-          <div className="mt-8 grid sm:grid-cols-2 gap-8">
+          <h2 className="text-2xl sm:text-3xl font-serif font-bold text-center lg:text-left">Attorney Profiles</h2>
+          <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8">
             <div className="card p-6">
-              <img src="/headshot.jpg" alt="Akin Kuteyi, Attorney at Kuteyi Legal Group" className="w-full h-64 object-cover rounded-xl" loading="lazy" />
+              <div className="aspect-[4/3] w-full overflow-hidden rounded-xl image-container">
+                <img src="/headshot.jpg" alt="Akin Kuteyi, Attorney at Kuteyi Legal Group" className="w-full h-full object-cover" loading="lazy" />
+              </div>
               <div className="mt-4 text-xl font-semibold">Akin Kuteyi, Esq.</div>
               <p className="mt-2 text-neutral-700 text-sm">Entertainment, Real Estate, Business, and Personal Injury.</p>
             </div>
             <div className="card p-6">
-              <img src="/office1.jpg" alt="Kuteyi Legal Group office interior" className="w-full h-64 object-cover rounded-xl" loading="lazy" />
+              <div className="aspect-[4/3] w-full overflow-hidden rounded-xl image-container">
+                <img src="/office1.jpg" alt="Kuteyi Legal Group office interior" className="w-full h-full object-cover" loading="lazy" />
+              </div>
               <p className="mt-4 text-neutral-700 text-sm">Our curated office and collaborative culture support decisive outcomes.</p>
             </div>
           </div>
@@ -179,8 +185,8 @@ export default function App() {
       {/* Case Studies */}
       <section id="case-studies" className="section">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-serif font-bold">Client Showcase & Case Studies</h2>
-          <div className="mt-6 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <h2 className="text-2xl sm:text-3xl font-serif font-bold text-center lg:text-left">Client Showcase & Case Studies</h2>
+          <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
             {['RIAA‑platinum producer','Oscar‑nominated actor','Major indie label','Touring DJ/producer','Film/TV production company','PI—rideshare passenger'].map((t,i)=>(
               <div key={i} className="card p-5 text-neutral-700">{t}</div>
             ))}
@@ -199,16 +205,16 @@ export default function App() {
       {/* Contact */}
       <section id="contact" className="section">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-3 gap-10">
+          <div className="grid lg:grid-cols-3 gap-8 lg:gap-10">
             <div className="lg:col-span-2">
-              <h2 className="text-3xl font-serif font-bold">Request Consultation</h2>
+              <h2 className="text-2xl sm:text-3xl font-serif font-bold text-center lg:text-left">Request Consultation</h2>
               <form
                 name="contact"
                 method="POST"
                 action="/success.html"
                 data-netlify="true"
                 data-netlify-honeypot="bot-field"
-                className="mt-8 grid sm:grid-cols-2 gap-4"
+                className="mt-6 sm:mt-8 grid grid-cols-1 sm:grid-cols-2 gap-4"
               >
                 {/* Hidden field for Netlify bot detection */}
                 <input type="hidden" name="form-name" value="contact" />
@@ -276,8 +282,8 @@ export default function App() {
       </section>
 
       {/* Footer */}
-      <footer className="py-10 border-t border-black/5 bg-white">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-sm flex flex-col sm:flex-row gap-4 sm:items-center justify-between text-neutral-600">
+      <footer className="py-8 sm:py-10 border-t border-black/5 bg-white">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-sm flex flex-col sm:flex-row gap-4 sm:items-center justify-between text-neutral-600 text-center sm:text-left">
           <div>© {new Date().getFullYear()} Kuteyi Legal Group, APC. All rights reserved.</div>
           <div className="flex gap-6">
             <a href="mailto:info@kuteyilegalgroup.com" className="hover:text-neutral-900">Contact</a>
