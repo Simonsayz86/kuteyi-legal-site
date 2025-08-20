@@ -143,7 +143,7 @@ export default function App() {
             </p>
             <div className="mt-6 space-y-3 text-neutral-700">
               <p className="italic">“Negotiated a complex catalog deal on a tight deadline—razor‑sharp and calm under pressure.”</p>
-              <p className="italic">“Settled my rideshare case for more than I expected.”</p>
+              <p className="italic">“responsive, fast and efficient... saved me over $400,000 on an acquision deal for more than I expected.”</p>
             </div>
           </div>
           <div className="card p-6">
@@ -187,7 +187,7 @@ export default function App() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <h2 className="text-2xl sm:text-3xl font-serif font-bold text-center lg:text-left">Client Showcase & Case Studies</h2>
           <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
-            {['RIAA‑platinum producer','Oscar‑nominated actor','Major indie label','Touring DJ/producer','Film/TV production company','PI—rideshare passenger'].map((t,i)=>(
+            {['RIAA‑platinum producers','Grammy for 2025 rap album of the year','Major indie label','Touring DJ/producer','Film/TV production company','Multiple catalog acquisitions'].map((t,i)=>(
               <div key={i} className="card p-5 text-neutral-700">{t}</div>
             ))}
           </div>
