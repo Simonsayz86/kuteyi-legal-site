@@ -38,7 +38,7 @@ export default function App() {
   ]
 
   const results = [
-    { top: '$725,000', sub: 'Rideshare collision • PI settlement' },
+    // { top: '$725,000', sub: 'Rideshare collision • PI settlement' },
     { top: '$310,000', sub: 'Premises liability • Pre‑litigation' },
     { top: '7‑figure', sub: 'Entertainment catalog deal' },
     { top: 'Multiple', sub: 'Six‑figure business disputes resolved' },
